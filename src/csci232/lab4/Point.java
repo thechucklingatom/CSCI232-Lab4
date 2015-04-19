@@ -9,13 +9,10 @@ package csci232.lab4;
  *
  * @author thechucklingatom
  */
-public class CSCI232Lab4 {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
+public class Point {
+    double x, y;
+    public Point(double inX, double inY){
+        x = inX;
+        y = inY;
     }
-    
 }
