@@ -15,4 +15,9 @@ public class Point {
         x = inX;
         y = inY;
     }
+    
+    public double DistanceFrom(Point p2){
+        double dis = Math.sqrt(Math.pow(p2.x - x, 2) + Math.pow(p2.y - y, 2));
+        return dis;
+    }
 }

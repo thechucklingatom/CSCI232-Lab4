@@ -51,7 +51,7 @@ public class ClosestPairApp {
             System.out.println("First point is (" + e.x + ", " + e.y + ")");
         }
         
-        System.out.println(theBestPair.getDistance(bestPoint[0], bestPoint[1]));
+        System.out.println(bestPoint[0].DistanceFrom(bestPoint[1]));
         
         QuickSort sorter = new QuickSort();
         //sorter.sort(yList);
@@ -59,8 +59,4 @@ public class ClosestPairApp {
     }
  
     
-}
-
-//public static void mergeSort(Point[] arr, boolean x, )
-
- 
+} 
