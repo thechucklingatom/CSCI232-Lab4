@@ -29,7 +29,7 @@ public class QuickSort {
         int i = lowerIndex;
         int j = higherIndex;
         // calculate pivot number, I am taking pivot as middle index number
-        double pivot = array[lowerIndex+(higherIndex-lowerIndex)/2].y;
+        double pivot = array[lowerIndex+(higherIndex-lowerIndex)/2].getY();
         // Divide into two arrays
         while (i <= j) {
             /**
@@ -38,10 +38,10 @@ public class QuickSort {
              * from right side which is less then the pivot value. Once the search
              * is done, then we exchange both numbers.
              */
-            while (array[i].y < pivot) {
+            while (array[i].getY() < pivot) {
                 i++;
             }
-            while (array[j].y > pivot) {
+            while (array[j].getY() > pivot) {
                 j--;
             }
             if (i <= j) {

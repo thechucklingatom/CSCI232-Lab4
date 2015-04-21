@@ -48,7 +48,7 @@ public class ClosestPairApp {
         ClosestPair theBestPair = new ClosestPair(xList, yList);
         Point[] bestPoint = theBestPair.BruteForce();
         for(Point e : bestPoint){
-            System.out.println("First point is (" + e.x + ", " + e.y + ")");
+            System.out.println("First point is (" + e.getX() + ", " + e.getY() + ")");
         }
         
         System.out.println(bestPoint[0].DistanceFrom(bestPoint[1]));

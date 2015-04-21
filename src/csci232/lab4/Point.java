@@ -10,7 +10,7 @@ package csci232.lab4;
  * @author thechucklingatom
  */
 public class Point {
-    double x, y;
+    private double x, y;
     public Point(double inX, double inY){
         x = inX;
         y = inY;
@@ -19,5 +19,13 @@ public class Point {
     public double DistanceFrom(Point p2){
         double dis = Math.sqrt(Math.pow(p2.x - x, 2) + Math.pow(p2.y - y, 2));
         return dis;
+    }
+    
+    public double getX(){
+        return x;
+    }
+    
+    public double getY(){
+        return y;
     }
 }
