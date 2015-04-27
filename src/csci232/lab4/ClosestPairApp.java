@@ -45,18 +45,28 @@ public class ClosestPairApp {
         xList.add(p12);
         ArrayList<Point> yList = xList;
         
+        Point[] yArr = new Point[xList.size()]; 
+        yList.toArray(yArr);
+        QuickSort sorter = new QuickSort();
+        sorter.sort(yArr);
+        yList = new ArrayList<Point>();
+        for(Point p : yArr){
+            yList.add(p);
+        }
+        
         ClosestPair theBestPair = new ClosestPair(xList, yList);
-        Point[] bestPoint = theBestPair.BruteForce();
+        Point[] bestPoint = theBestPair.bruteForce();
         for(Point e : bestPoint){
             System.out.println("First point is (" + e.getX() + ", " + e.getY() + ")");
         }
         
-        System.out.println(bestPoint[0].DistanceFrom(bestPoint[1]));
+        System.out.printf("%.4f\n", bestPoint[0].DistanceFrom(bestPoint[1]));
         
-        QuickSort sorter = new QuickSort();
-        //sorter.sort(yList);
+        Pair bestPair = theBestPair.closestAlgorithm(xList, yList);
         
+        System.out.println("The First Point is (" + bestPair.getPoint1().getX() + ", " + bestPair.getPoint1().getY() + ")");
+        System.out.println("The Second Point is (" + bestPair.getPoint2().getX() + ", " + bestPair.getPoint2().getY() + ")");
+        System.out.println("The distance is " + bestPair.getDistance());
     }
- 
     
 } 
