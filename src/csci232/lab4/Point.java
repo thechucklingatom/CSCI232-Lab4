@@ -18,6 +18,10 @@ public class Point {
     
     public double DistanceFrom(Point p2){
         double dis = Math.sqrt(Math.pow(p2.getX() - x, 2) + Math.pow(p2.getY() - y, 2));
+        if(dis == 0){
+            //Infinite
+            return Double.MAX_VALUE;
+        }
         return dis;
     }
     

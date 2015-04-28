@@ -10,59 +10,95 @@ package csci232.lab4;
  * @author thechucklingatom
  */
 public class QuickSort {
-     
+
     private Point array[];
     private int length;
- 
-    public void sort(Point[] inputArr) {
-         
+
+    public void sort(Point[] inputArr, boolean x) {
+
         if (inputArr == null || inputArr.length == 0) {
             return;
         }
         this.array = inputArr;
         length = inputArr.length;
-        quickSort(0, length - 1);
+        quickSort(0, length - 1, x);
     }
- 
-    private void quickSort(int lowerIndex, int higherIndex) {
-         
+
+    private void quickSort(int lowerIndex, int higherIndex, boolean x) {
+
         int i = lowerIndex;
         int j = higherIndex;
-        // calculate pivot number, I am taking pivot as middle index number
-        double pivot = array[lowerIndex+(higherIndex-lowerIndex)/2].getY();
-        // Divide into two arrays
-        while (i <= j) {
-            /**
-             * In each iteration, we will identify a number from left side which
-             * is greater then the pivot value, and also we will identify a number
-             * from right side which is less then the pivot value. Once the search
-             * is done, then we exchange both numbers.
-             */
-            while (array[i].getY() < pivot) {
-                i++;
+        if (x) {
+            // calculate pivot number, I am taking pivot as middle index number
+            double pivot = array[lowerIndex + (higherIndex - lowerIndex) / 2].getX();
+            // Divide into two arrays
+            while (i <= j) {
+                /**
+                 * In each iteration, we will identify a number from left side
+                 * which is greater then the pivot value, and also we will
+                 * identify a number from right side which is less then the
+                 * pivot value. Once the search is done, then we exchange both
+                 * numbers.
+                 */
+                while (array[i].getX() < pivot) {
+                    i++;
+                }
+                while (array[j].getX() > pivot) {
+                    j--;
+                }
+                if (i <= j) {
+                    exchangeNumbers(i, j);
+                    //move index to next position on both sides
+                    i++;
+                    j--;
+                }
             }
-            while (array[j].getY() > pivot) {
-                j--;
+            // call quickSort() method recursively
+            if (lowerIndex < j) {
+                quickSort(lowerIndex, j, x);
             }
-            if (i <= j) {
-                exchangeNumbers(i, j);
-                //move index to next position on both sides
-                i++;
-                j--;
+            if (i < higherIndex) {
+                quickSort(i, higherIndex, x);
+            }
+        } else {
+            // calculate pivot number, I am taking pivot as middle index number
+            double pivot = array[lowerIndex + (higherIndex - lowerIndex) / 2].getY();
+            // Divide into two arrays
+            while (i <= j) {
+                /**
+                 * In each iteration, we will identify a number from left side
+                 * which is greater then the pivot value, and also we will
+                 * identify a number from right side which is less then the
+                 * pivot value. Once the search is done, then we exchange both
+                 * numbers.
+                 */
+                while (array[i].getY() < pivot) {
+                    i++;
+                }
+                while (array[j].getY() > pivot) {
+                    j--;
+                }
+                if (i <= j) {
+                    exchangeNumbers(i, j);
+                    //move index to next position on both sides
+                    i++;
+                    j--;
+                }
+            }
+            // call quickSort() method recursively
+            if (lowerIndex < j) {
+                quickSort(lowerIndex, j, x);
+            }
+            if (i < higherIndex) {
+                quickSort(i, higherIndex, x);
             }
         }
-        // call quickSort() method recursively
-        if (lowerIndex < j)
-            quickSort(lowerIndex, j);
-        if (i < higherIndex)
-            quickSort(i, higherIndex);
     }
- 
+
     private void exchangeNumbers(int i, int j) {
         Point temp = array[i];
         array[i] = array[j];
         array[j] = temp;
     }
-     
-    
+
 }
