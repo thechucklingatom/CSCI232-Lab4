@@ -75,6 +75,7 @@ public class ClosestPair {
         } else {
             closestPair = null;
             int middle = xList.size() / 2;
+            
             Point midX = xList.get(middle);
             for (int i = 0; i < xList.size(); i++) {
                 if (xList.get(i).getX() <= midX.getX()) {

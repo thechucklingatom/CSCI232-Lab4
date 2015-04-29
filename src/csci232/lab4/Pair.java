@@ -12,9 +12,12 @@ package csci232.lab4;
 public class Pair {
     private Point p1, p2;
     private double distance;
+    
     public Pair(Point p1, Point p2){
         this.p1 = p1;
         this.p2 = p2;
+        
+        //checks if it is the same point. if it is, make the distance INF
         if(this.p1.equals(this.p2)){
             distance = Double.MAX_VALUE;
         }else{
@@ -22,6 +25,7 @@ public class Pair {
         }
     }
     
+    //getters
     public double getDistance(){
         return distance;
     }
