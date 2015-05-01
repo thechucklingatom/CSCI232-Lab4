@@ -75,6 +75,7 @@ public class ClosestPair {
         } else {
             closestPair = null;
             int middle = xList.size() / 2;
+            System.out.println("Dividing arr[" + xList.get(0).getXPos() + "] and arr[" + xList.get(middle).getXPos() + "]");
             
             Point midX = xList.get(middle);
             for (int i = 0; i < xList.size(); i++) {

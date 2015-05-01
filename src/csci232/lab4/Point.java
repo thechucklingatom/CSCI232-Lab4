@@ -11,6 +11,7 @@ package csci232.lab4;
  */
 public class Point {
     private double x, y;
+    private int xPos;
     public Point(double inX, double inY){
         x = inX;
         y = inY;
@@ -36,5 +37,14 @@ public class Point {
     
     public double getY(){
         return y;
+    }
+    
+    public int getXPos(){
+        return xPos;
+    }
+    
+    //setter
+    public void setXPos(int pos){
+        xPos = pos;
     }
 }
