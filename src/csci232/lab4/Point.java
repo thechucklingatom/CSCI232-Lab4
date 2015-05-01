@@ -11,6 +11,7 @@ package csci232.lab4;
  */
 public class Point {
     private double x, y;
+    //just to help keep order of the points if using arrayLists
     private int xPos;
     public Point(double inX, double inY){
         x = inX;
